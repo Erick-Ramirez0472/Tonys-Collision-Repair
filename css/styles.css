@@ -1,5 +1,5 @@
 /* Tony's Collision Repair
-   Design read: local-service marketing page for stressed Provo drivers; bold, industrial, precise.
+   Design read: local-service marketing page for stressed Utah County drivers; bold, industrial, precise.
    Dials: DESIGN_VARIANCE 6 / MOTION_INTENSITY 4 / VISUAL_DENSITY 4.
    Native CSS, no design system. Shape lock: all-sharp (radius 0). One accent: signal red.
    Accessibility target: WCAG 2.2 AA. Contrast pairs measured for both themes. */
@@ -57,10 +57,10 @@ main:focus{outline:none}
 .skip:focus{top:1rem}
 
 /* Logo lockup: italic wordmark + red bar, flat */
-.logo{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;text-decoration:none}
-.logo__bar{width:5px;height:30px;background:var(--red);transform:skewX(-14deg)}
-.logo__name{font:italic 800 1.85rem/1 var(--display);text-transform:uppercase;letter-spacing:.01em}
-.logo__sub{font:600 .8125rem/1.15 var(--body);color:var(--muted);max-width:5.5rem}
+/* Logo: shield badge cropped from the business card, transparent around the shield */
+.logo{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.logo__badge{display:block;height:66px;width:auto}
+.logo--footer .logo__badge{height:96px}
 
 /* Buttons: sharp, one primary (red) and one line style */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:0 1.5rem;
@@ -75,7 +75,7 @@ main:focus{outline:none}
 
 /* Header: 72px, one line on desktop */
 .header{border-bottom:1px solid var(--rule)}
-.header__row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:72px}
+.header__row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:80px}
 .nav{display:flex;align-items:center;gap:1.75rem}
 .nav ul{display:flex;gap:1.5rem}
 .nav ul a{display:inline-flex;align-items:center;min-height:44px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s var(--ease)}
@@ -86,9 +86,9 @@ main:focus{outline:none}
 .menu-btn{display:none}
 
 /* Hero: asymmetric split, photo bleeds to the right edge */
-.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:min(calc(100dvh - 73px),860px);border-bottom:1px solid var(--rule)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:min(calc(100dvh - 81px),860px);border-bottom:1px solid var(--rule)}
 .hero__copy{align-self:center;padding:clamp(2.5rem,6vw,5rem) clamp(1.5rem,4vw,4rem) clamp(2.5rem,6vw,5rem) max(var(--gutter),calc((100vw - var(--wrap))/2 + var(--gutter)))}
-.hero h1{font-size:clamp(2.5rem,4.4vw,4.25rem);line-height:1;max-width:19ch}
+.hero h1{font-size:clamp(2.5rem,4.2vw,4.1rem);line-height:1;max-width:22ch}
 .hero h1 em{font-style:italic;font-weight:800;color:var(--red-tx);display:inline-block;padding-bottom:.08em;line-height:1.1}
 .hero__sub{margin-top:1.5rem;max-width:30rem;font-size:clamp(1.0625rem,1.3vw,1.25rem);color:var(--muted)}
 .hero__ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
@@ -224,15 +224,15 @@ main:focus{outline:none}
 
 /* Motion: entry + reveal. Only when JS runs and motion is allowed. */
 @media (prefers-reduced-motion:no-preference){
-  .js .hero__copy>*{opacity:0;transform:translateY(16px);animation:rise .7s var(--ease) forwards}
-  .js .hero__copy>:nth-child(2){animation-delay:.08s}
-  .js .hero__copy>:nth-child(3){animation-delay:.16s}
-  .js .hero__media img{animation:settle 1.4s var(--ease) both}
-  .js [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:var(--d,0s)}
+  /* Blocks rise in; they reset when fully off screen so the move-in replays in either scroll direction */
+  .js [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
   .js [data-reveal].in{opacity:1;transform:none}
+  /* Photos settle from a slight zoom as their block arrives */
+  .js [data-reveal] img{transform:scale(1.12);transition:transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+  .js [data-reveal].in img{transform:scale(1)}
+  .js .cell[data-reveal].in:hover img{transform:scale(1.03);transition-delay:0s;transition-duration:.8s}
+  .js .hero__media[data-reveal]{transform:none}
 }
-@keyframes rise{to{opacity:1;transform:none}}
-@keyframes settle{from{transform:scale(1.06)}to{transform:scale(1)}}
 
 /* Responsive */
 @media (max-width:1100px){
@@ -304,7 +304,7 @@ main:focus{outline:none}
 @media (prefers-contrast:more){:root{--muted:var(--text);--line:var(--text)}}
 @media (forced-colors:active){
   .btn,.radio span,.form input,.form textarea,.menu-btn{border:2px solid ButtonText}
-  .logo__bar,.track::after,.track li::before{background:CanvasText;border-color:CanvasText}
+  .track::after,.track li::before{background:CanvasText;border-color:CanvasText}
   .cell--red{border:2px solid CanvasText}
 }
 @media print{.actionbar,.skip,.menu-btn,.form{display:none}body{padding:0}}

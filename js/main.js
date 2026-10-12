@@ -39,15 +39,18 @@
     new IntersectionObserver(([en]) => bar.classList.toggle('show', !en.isIntersecting), { threshold: 0 })
       .observe($('.hero__ctas'));
 
-    // Reveal key blocks as they enter (sequence + hierarchy), skipped under reduced motion
+    // Move-in reveals for key blocks and photos (sequence + hierarchy), skipped under reduced motion.
+    // A block plays when 15% of it is visible and resets once it is completely off screen,
+    // so the animation replays every time it comes back into view, scrolling down or up.
     if (!reduce) {
-      const els = $$('.bento .cell, .answers > div, .track li, .about__text, .form');
+      const els = $$('.hero__copy > *, .hero__media, .proof__row > *, .bento .cell, .answers > div, .track li, .about__num, .about__text, .quote__intro, .form');
       const io = new IntersectionObserver(entries => entries.forEach(en => {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-      }), { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+        if (en.intersectionRatio >= 0.15) en.target.classList.add('in');
+        else if (!en.isIntersecting) en.target.classList.remove('in');
+      }), { threshold: [0, 0.15] });
       els.forEach(el => {
         const sibs = [...el.parentElement.children];
-        el.style.setProperty('--d', (sibs.indexOf(el) % 5) * 0.06 + 's');
+        el.style.setProperty('--d', (sibs.indexOf(el) % 5) * 0.07 + 's');
         el.setAttribute('data-reveal', '');
         io.observe(el);
       });
