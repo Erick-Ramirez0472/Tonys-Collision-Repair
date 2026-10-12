@@ -1,17 +1,24 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tony's Collision Repair | Auto Body Shop in Provo, Utah</title>
-  <meta name="description" content="Collision repair, paint matching and frame work in Provo, Utah. Owner Tony Ramirez has 20 years of experience. Request a quote or call (555) 123-4567.">
+  <title>Tony's Collision Repair | Collision and Body Repair in Provo, UT</title>
+  <meta name="description" content="Collision repair, paint matching, dent and frame work in Provo, Utah. Owner Tony Ramirez has 20 years of experience. Get a quote or call (555) 123-4567.">
   <meta name="color-scheme" content="dark light">
-  <meta name="theme-color" content="#0e0f11">
+  <meta name="theme-color" content="#0d0e10" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f3f4f5" media="(prefers-color-scheme: light)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tony's Collision Repair">
+  <meta property="og:title" content="Tony's Collision Repair | Provo, UT">
+  <meta property="og:description" content="Collision repair in Provo, Utah. 20 years of experience. Get a quote or call (555) 123-4567.">
+  <meta property="og:image" content="assets/img/hero-road-1800.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.replace('no-js','js')</script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"AutoBodyShop","name":"Tony's Collision Repair","telephone":"+1-555-123-4567","email":"info@tonyscollisionrepair.com","founder":{"@type":"Person","name":"Tony Ramirez"},"address":{"@type":"PostalAddress","streetAddress":"123 Main Street","addressLocality":"Provo","addressRegion":"UT","postalCode":"84601","addressCountry":"US"}}
   </script>
@@ -19,176 +26,289 @@
 <body>
   <a class="skip" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="wrap site-header__row">
-      <a class="brand" href="#top" aria-label="Tony's Collision Repair, back to top">
-        <span class="brand__mark" aria-hidden="true"></span>
-        <span class="brand__text"><span class="brand__name">Tony's</span><span class="brand__sub">Collision Repair</span></span>
+  <header class="header">
+    <div class="wrap header__row">
+      <a class="logo" href="#top" aria-label="Tony's Collision Repair, home">
+        <span class="logo__bar" aria-hidden="true"></span>
+        <span class="logo__name">Tony's</span>
+        <span class="logo__sub">Collision Repair</span>
       </a>
-      <nav class="site-nav" aria-label="Main">
+
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
+        <span>Menu</span>
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Main">
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#about">About Tony</a></li>
-          <li><a href="#process">How it works</a></li>
-          <li><a href="#quote">Get a quote</a></li>
+          <li><a href="#insurance">Insurance</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
+        <a class="nav__tel" href="tel:+15551234567">
+          <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.120,8.120,0,0,0-.75.56L134.87,160c-15.42-7.490-31.340-23.290-38.830-38.510l20.780-24.710c.2-.25.390-.5.570-.77a16,16,0,0,0,1.320-15.060l0-.12L97.540,33.640a16,16,0,0,0-16.620-9.520A56.260,56.260,0,0,0,32,80c0,79.400,64.600,144,144,144a56.260,56.260,0,0,0,55.880-48.920A16,16,0,0,0,222.370,158.460ZM176,208A128.140,128.140,0,0,1,48,80,40.200,40.200,0,0,1,82.870,40a.61.61,0,0,0,0,.12l21,47L83.200,111.860a6.130,6.130,0,0,0-.57.77,16,16,0,0,0-1,15.700c9.060,18.530,27.730,37.060,46.460,46.110a16,16,0,0,0,15.750-1.140,8.440,8.440,0,0,0,.74-.56L168.890,152l47,21.050h0s.08,0,.11,0A40.210,40.210,0,0,1,176,208Z"/></svg>
+          <span>Call (555) 123-4567</span>
+        </a>
+        <a class="btn btn--sm" href="#quote">Get a quote</a>
       </nav>
-      <a class="btn btn--sm btn--line" href="tel:+15551234567"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><path d="M6 3h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 5a2 2 0 013-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span><span class="vh">Call Tony's at </span>(555) 123-4567</span></a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- HERO -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <p class="kicker">Auto body shop &middot; Provo, Utah</p>
-          <h1 id="hero-title">Collision repair <em>done by hand,</em> done right.</h1>
-          <p class="lede">Tony Ramirez has been fixing wrecked cars for 20 years. Bring it in or send us photos and we'll tell you what it needs and what it costs.</p>
-          <div class="cta">
-            <a class="btn" href="#quote">Get a quote</a>
-            <a class="btn btn--ghost" href="tel:+15551234567">Call (555) 123-4567</a>
-          </div>
-        </div>
 
-        <div class="plate">
-          <p class="plate__num"><span class="plate__20">20</span><span class="plate__yrs">years</span></p>
-          <p class="plate__cap">of collision repair experience</p>
-          <hr>
-          <p class="plate__who"><strong>Tony Ramirez</strong><br>Owner</p>
+    <!-- Hero: asymmetric split, copy left, photo bleeding right -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <h1 id="hero-title">Provo collision repair, <em>done right.</em></h1>
+        <p class="hero__sub">Tony Ramirez has repaired collision damage for 20 years. Send a few photos for a quote, or call the shop.</p>
+        <div class="hero__ctas">
+          <a class="btn" href="#quote">Get a quote</a>
+          <a class="btn btn--line" href="tel:+15551234567">Call (555) 123-4567</a>
         </div>
       </div>
-
-      <svg class="hero__car" viewBox="0 0 1200 150" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMax meet">
-        <line x1="0" y1="140" x2="1200" y2="140" class="road"/>
-        <g class="carline" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M300 128h-30c-12 0-18-8-18-20 0-10 8-17 20-20l62-12c24-26 52-38 98-40h66c36 2 66 18 92 46l58 8c14 2 22 10 22 22v16h-30"/>
-          <path d="M432 128h260"/>
-          <path d="M360 76c18-20 38-28 66-30h40v34h-118z M482 46h36c28 2 50 16 70 36h-106z" class="glass"/>
-          <circle cx="396" cy="128" r="26"/><circle cx="396" cy="128" r="9"/>
-          <circle cx="740" cy="128" r="26"/><circle cx="740" cy="128" r="9"/>
-          <path d="M780 100h22" class="accent"/>
-        </g>
-      </svg>
+      <figure class="hero__media">
+        <!-- Stand-in photo (Unsplash via Picsum, id 352). Replace with a photo of the shop or a finished repair. -->
+        <img src="assets/img/hero-road-1800.webp"
+             srcset="assets/img/hero-road-900.webp 900w, assets/img/hero-road-1800.webp 1800w"
+             sizes="(max-width: 860px) 100vw, 55vw"
+             width="1800" height="1200" fetchpriority="high"
+             alt="Red and white light trails from traffic on a curving road at dusk">
+      </figure>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section" id="services" aria-labelledby="services-title">
-      <div class="wrap split">
-        <div class="split__head">
-          <p class="kicker">What we do</p>
-          <h2 id="services-title">From a crumpled fender to a full rebuild.</h2>
-        </div>
-        <ul class="rows">
-          <li><h3>Collision repair</h3><p>Panels, bumpers, doors and quarter panels repaired or replaced to fit the way they should.</p></li>
-          <li><h3>Paint and color matching</h3><p>Mixed to match your car's paint and blended so the repair doesn't stand out.</p></li>
-          <li><h3>Dent and scratch repair</h3><p>Door dings, hail, parking-lot damage and deep scratches.</p></li>
-          <li><h3>Frame and structural work</h3><p>Measured and pulled back into alignment so the car drives straight.</p></li>
-          <li><h3>Insurance claims</h3><p>Get a repair estimate in writing to take to your insurer. The choice of shop is yours.</p></li>
+    <!-- Proof strip: real facts only -->
+    <section class="proof" aria-label="Why drivers choose Tony's">
+      <div class="wrap proof__row">
+        <p class="proof__big"><span class="proof__num">20</span><span class="proof__unit">years of collision repair experience</span></p>
+        <ul class="proof__list">
+          <li>
+            <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-32-80a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,136Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,168Z"/></svg>
+            Written estimate before any work starts
+          </li>
+          <li>
+            <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.190,23.060,18.860,46,25.260,47,25.530a8,8,0,0,0,4.200,0c1-.27,23.910-6.670,47-25.530C198.480,196.670,224,164.720,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.070-13.660,67.160-40.600,89.420A129.300,129.300,0,0,1,128,223.620a128.250,128.250,0,0,1-38.920-21.810C61.820,179.510,48,149.300,48,112l0-56,160,0ZM82.340,141.660a8,8,0,0,1,11.320-11.320L112,148.690l50.340-50.350a8,8,0,0,1,11.320,11.320l-56,56a8,8,0,0,1-11.320,0Z"/></svg>
+            Help with your insurance claim
+          </li>
+          <li>
+            <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M226.76,69a8,8,0,0,0-12.840-2.880l-40.300,37.190-17.230-3.700-3.700-17.230,37.190-40.300A8,8,0,0,0,187,29.240,72,72,0,0,0,88,96,72.340,72.340,0,0,0,94,124.940L33.790,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.260,45.260c.13-.13.27-.28.39-.42L131.060,162A72,72,0,0,0,232,96,71.560,71.560,0,0,0,226.760,69ZM160,152a56.140,56.140,0,0,1-27.070-7,8,8,0,0,0-9.920,1.770L67.110,211.510a16,16,0,0,1-22.620-22.620L109.180,133a8,8,0,0,0,1.770-9.930,56,56,0,0,1,58.360-82.310l-31.200,33.810a8,8,0,0,0-1.940,7.100L141.830,108a8,8,0,0,0,6.140,6.140l26.350,5.660a8,8,0,0,0,7.100-1.940l33.810-31.200A56.060,56.060,0,0,1,160,152Z"/></svg>
+            Owner-run shop in Provo
+          </li>
         </ul>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="section section--tint" id="about" aria-labelledby="about-title">
-      <div class="wrap about">
-        <div>
-          <p class="kicker">About Tony</p>
-          <h2 id="about-title">The name on the door is the person fixing your car.</h2>
-        </div>
-        <div class="about__body">
-          <p>Tony's is a family-style shop in Provo. Tony Ramirez has spent 20 years in collision repair, and he still runs the shop himself.</p>
-          <p>That means you talk to the people doing the work, you get straight answers, and your car gets the same care we'd give our own.</p>
-          <a class="textlink" href="#quote">Start with a quote<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        </div>
+    <!-- Services: bento, exactly 5 cells for 5 services -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <h2 id="services-title">What we fix.</h2>
+        <ul class="bento">
+          <li class="cell cell--a">
+            <img src="assets/img/body-jaguars-1400.webp" srcset="assets/img/body-jaguars-700.webp 700w, assets/img/body-jaguars-1400.webp 1400w" sizes="(max-width: 860px) 100vw, 58vw" width="1400" height="933" loading="lazy" decoding="async"
+                 alt="Two classic sedans parked in front of yellow garage doors, one in bare primer and one with worn copper paint">
+            <div class="cell__text">
+              <h3>Collision and body repair</h3>
+              <p>Crushed panels, doors and quarter panels repaired or replaced and fitted with even gaps.</p>
+            </div>
+          </li>
+          <li class="cell cell--b">
+            <img src="assets/img/paint-panel-1200.webp" srcset="assets/img/paint-panel-600.webp 600w, assets/img/paint-panel-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 40vw" width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Close-up of a scratched and weathered car hood with a chrome script badge">
+            <div class="cell__text">
+              <h3>Paint and color matching</h3>
+              <p>Mixed to your factory paint code and blended so the repair disappears.</p>
+            </div>
+          </li>
+          <li class="cell cell--c cell--steel">
+            <svg class="i i--lg" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M251.34,112,183.880,44.080a96.100,96.100,0,0,0-135.770,0l-.09.09L34.250,58.400A8,8,0,0,0,45.740,69.530L59.470,55.350a79.920,79.920,0,0,1,18.710-13.900L124.680,88l-96,96a16,16,0,0,0,0,22.630l20.690,20.690a16,16,0,0,0,22.630,0l96-96,14.340,14.340h0L200,163.300a16,16,0,0,0,22.630,0l28.690-28.690A16,16,0,0,0,251.340,112ZM60.680,216,40,195.310l68-68L128.680,148ZM162.340,114.320,140,136.670,119.310,116l22.350-22.350a8,8,0,0,0,0-11.320L94.320,35a80,80,0,0,1,78.230,20.410l44.220,44.510L188,128.660l-14.340-14.340A8,8,0,0,0,162.340,114.320Zm49,37.660-12-12L228,111.250l12,12Z"/></svg>
+            <div class="cell__text">
+              <h3>Dent and scratch repair</h3>
+              <p>Door dings, hail damage, keyed paint and parking-lot scrapes.</p>
+            </div>
+          </li>
+          <li class="cell cell--d cell--red">
+            <svg class="i i--lg" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M240,112H211.310L168,68.690A15.860,15.860,0,0,0,156.690,64H44.280A16,16,0,0,0,31,71.120L1.340,115.560A8.070,8.070,0,0,0,0,120v48a16,16,0,0,0,16,16H33a32,32,0,0,0,62,0h66a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V128A16,16,0,0,0,240,112ZM44.280,80H156.690l32,32H23ZM64,192a16,16,0,1,1,16-16A16,16,0,0,1,64,192Zm128,0a16,16,0,1,1,16-16A16,16,0,0,1,192,192Zm48-24H223a32,32,0,0,0-62,0H95a32,32,0,0,0-62,0H16V128H240Z"/></svg>
+            <div class="cell__text">
+              <h3>Frame and structural</h3>
+              <p>Measured and pulled back to spec so the car drives straight again.</p>
+            </div>
+          </li>
+          <li class="cell cell--e">
+            <img src="assets/img/finish-grille-1200.webp" srcset="assets/img/finish-grille-600.webp 600w, assets/img/finish-grille-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 33vw" width="1200" height="800" loading="lazy" decoding="async"
+                 alt="Front of a green classic car showing its chrome grille and round headlights">
+            <div class="cell__text">
+              <h3>Bumpers, lights and trim</h3>
+              <p>Cracked bumper covers, broken lamps, grilles and mirrors.</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="section" id="process" aria-labelledby="process-title">
+    <!-- Insurance: sticky heading column + plain-language answers -->
+    <section class="section insurance" id="insurance" aria-labelledby="insurance-title">
+      <div class="wrap insurance__grid">
+        <div class="insurance__head">
+          <p class="eyebrow">Insurance</p>
+          <h2 id="insurance-title">Dealing with a claim?</h2>
+          <p class="lead">Here is how a claim works when you bring your car to us.</p>
+        </div>
+        <dl class="answers">
+          <div>
+            <dt>You choose where your car is repaired.</dt>
+            <dd>Your insurer may suggest a shop, but the choice is yours. You can bring it to Tony's.</dd>
+          </div>
+          <div>
+            <dt>We write the estimate and work with your adjuster.</dt>
+            <dd>We document the damage, send the estimate, and handle the back-and-forth on the repair.</dd>
+          </div>
+          <div>
+            <dt>Have these ready when you call.</dt>
+            <dd>Your claim number, your adjuster's name and phone number, and photos of the damage if you have them.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Process: horizontal track that fills as you scroll -->
+    <section class="section process" id="process" aria-labelledby="process-title">
       <div class="wrap">
-        <p class="kicker">How it works</p>
-        <h2 id="process-title">Four steps, no surprises.</h2>
-        <ol class="steps">
-          <li><span class="steps__n" aria-hidden="true">1</span><h3>Tell us what happened</h3><p>Call, or send the form below with a few details and photos if you have them.</p></li>
-          <li><span class="steps__n" aria-hidden="true">2</span><h3>Get your quote</h3><p>We look at the damage and give you a clear written estimate.</p></li>
-          <li><span class="steps__n" aria-hidden="true">3</span><h3>We repair it</h3><p>Body work, paint and finishing. We keep you updated along the way.</p></li>
-          <li><span class="steps__n" aria-hidden="true">4</span><h3>Pick it up</h3><p>You inspect it before you drive off.</p></li>
+        <h2 id="process-title">How a repair works.</h2>
+        <ol class="track">
+          <li>
+            <h3>Call or send photos</h3>
+            <p>Tell us what happened. Photos help us give you a faster answer.</p>
+          </li>
+          <li>
+            <h3>Get a written estimate</h3>
+            <p>We inspect the car and put the cost in writing before any work starts.</p>
+          </li>
+          <li>
+            <h3>We repair it</h3>
+            <p>Body, frame and paint work. We call if we find hidden damage.</p>
+          </li>
+          <li>
+            <h3>Pick it up</h3>
+            <p>Look it over with us before you drive away.</p>
+          </li>
         </ol>
       </div>
     </section>
 
-    <!-- QUOTE -->
-    <section class="section section--paper" id="quote" aria-labelledby="quote-title">
-      <div class="wrap quote">
+    <!-- About: typographic statement. TODO: add a real portrait of Tony at the shop, 1200x1500. -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap about__grid">
+        <p class="about__num" aria-hidden="true">20</p>
+        <div class="about__text">
+          <h2 id="about-title">Twenty years of collision repair.</h2>
+          <p>Tony Ramirez owns and runs Tony's Collision Repair in Provo. He has spent 20 years fixing collision damage, and that experience goes into every estimate and every repair.</p>
+          <p class="sig">Tony Ramirez<span>Owner</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote form -->
+    <section class="section quote" id="quote" aria-labelledby="quote-title">
+      <div class="wrap quote__grid">
         <div class="quote__intro">
-          <p class="kicker">Get a quote</p>
-          <h2 id="quote-title">Tell us about your car.</h2>
-          <p>Fill in what you can. Only name and phone are required. Prefer to talk? Call and ask for Tony.</p>
+          <p class="eyebrow">Contact</p>
+          <h2 id="quote-title">Get a quote.</h2>
+          <p class="lead">Tell us what happened and we'll get back to you. Only your name and phone number are required.</p>
           <ul class="contact">
-            <li><span class="contact__k">Phone</span><a href="tel:+15551234567">(555) 123-4567</a></li>
-            <li><span class="contact__k">Email</span><a href="mailto:info@tonyscollisionrepair.com">info@tonyscollisionrepair.com</a></li>
-            <li><span class="contact__k">Shop</span><address>123 Main Street<br>Provo, UT 84601</address><a href="https://www.google.com/maps/search/?api=1&amp;query=123+Main+Street+Provo+UT+84601">Get directions<span class="vh"> (opens Google Maps)</span></a></li>
+            <li>
+              <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.120,8.120,0,0,0-.75.56L134.87,160c-15.42-7.490-31.340-23.290-38.830-38.510l20.780-24.710c.2-.25.390-.5.570-.77a16,16,0,0,0,1.320-15.060l0-.12L97.540,33.640a16,16,0,0,0-16.620-9.520A56.260,56.260,0,0,0,32,80c0,79.400,64.600,144,144,144a56.260,56.260,0,0,0,55.880-48.920A16,16,0,0,0,222.370,158.460ZM176,208A128.140,128.140,0,0,1,48,80,40.200,40.200,0,0,1,82.870,40a.61.61,0,0,0,0,.12l21,47L83.200,111.860a6.130,6.130,0,0,0-.57.77,16,16,0,0,0-1,15.700c9.060,18.530,27.730,37.060,46.460,46.110a16,16,0,0,0,15.750-1.140,8.440,8.440,0,0,0,.74-.56L168.890,152l47,21.050h0s.08,0,.11,0A40.210,40.210,0,0,1,176,208Z"/></svg>
+              <a href="tel:+15551234567">(555) 123-4567</a>
+            </li>
+            <li>
+              <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.430,64,128,133.150,52.570,64ZM216,192H40V74.190l82.590,75.710a8,8,0,0,0,10.820,0L216,74.190V192Z"/></svg>
+              <a href="mailto:info@tonyscollisionrepair.com">info@tonyscollisionrepair.com</a>
+            </li>
+            <li>
+              <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.100,88.100,0,0,0-88,88c0,31.400,14.510,64.680,42,96.250a254.190,254.190,0,0,0,41.450,38.300,8,8,0,0,0,9.180,0A254.190,254.190,0,0,0,174,200.250c27.450-31.570,42-64.850,42-96.250A88.100,88.100,0,0,0,128,16Zm0,206c-16.530-13-72-60.750-72-118a72,72,0,0,1,144,0C200,161.230,144.530,209,128,222Z"/></svg>
+              <span>123 Main Street, Provo, UT 84601<br><a href="https://www.google.com/maps/search/?api=1&amp;query=123+Main+Street+Provo+UT+84601">Get directions<span class="vh"> (opens Google Maps)</span></a></span>
+            </li>
           </ul>
         </div>
 
         <form class="form" id="form" novalidate aria-labelledby="quote-title">
-          <div id="err-summary" class="summary" role="alert" tabindex="-1" hidden>
-            <h3>Please fix the following</h3>
+          <div class="summary" id="err-summary" role="alert" tabindex="-1" hidden>
+            <h3>Check these fields</h3>
             <ul id="err-list"></ul>
           </div>
 
-          <div class="field">
-            <label for="f-name">Your name <span class="req">(required)</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required aria-required="true">
-            <p class="err" id="e-name" hidden></p>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-name">Name <span class="req">(required)</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-required="true">
+              <p class="err" id="e-name" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone <span class="req">(required)</span></label>
+              <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-required="true" aria-describedby="h-phone">
+              <p class="hint" id="h-phone">So we can call you back. Example: 801-555-0123</p>
+              <p class="err" id="e-phone" hidden></p>
+            </div>
           </div>
 
-          <div class="field">
-            <label for="f-phone">Phone number <span class="req">(required)</span></label>
-            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-required="true" aria-describedby="h-phone">
-            <p class="hint" id="h-phone">Example: 801-555-0123</p>
-            <p class="err" id="e-phone" hidden></p>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-email">Email <span class="opt">(optional)</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email">
+              <p class="err" id="e-email" hidden></p>
+            </div>
+            <div class="field">
+              <label for="f-vehicle">Vehicle <span class="opt">(optional)</span></label>
+              <input id="f-vehicle" name="vehicle" type="text" autocomplete="off" aria-describedby="h-vehicle">
+              <p class="hint" id="h-vehicle">Year, make and model</p>
+            </div>
           </div>
 
-          <div class="field">
-            <label for="f-email">Email <span class="opt">(optional)</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email">
-            <p class="err" id="e-email" hidden></p>
-          </div>
-
-          <div class="field">
-            <label for="f-vehicle">Vehicle <span class="opt">(optional)</span></label>
-            <input id="f-vehicle" name="vehicle" type="text" autocomplete="off" aria-describedby="h-vehicle">
-            <p class="hint" id="h-vehicle">Year, make and model</p>
-          </div>
-
-          <fieldset class="field fieldset">
+          <fieldset class="field choice">
             <legend>Is this an insurance claim?</legend>
-            <label class="radio"><input type="radio" name="claim" value="Yes"><span>Yes</span></label>
-            <label class="radio"><input type="radio" name="claim" value="No"><span>No</span></label>
-            <label class="radio"><input type="radio" name="claim" value="Not sure" checked><span>Not sure</span></label>
+            <div class="choice__opts">
+              <label class="radio"><input type="radio" name="claim" value="Yes"><span>Yes</span></label>
+              <label class="radio"><input type="radio" name="claim" value="No"><span>No</span></label>
+              <label class="radio"><input type="radio" name="claim" value="Not sure yet" checked><span>Not sure yet</span></label>
+            </div>
           </fieldset>
 
           <div class="field">
             <label for="f-msg">What happened? <span class="opt">(optional)</span></label>
-            <textarea id="f-msg" name="msg" rows="4"></textarea>
+            <textarea id="f-msg" name="msg" rows="4" aria-describedby="h-msg"></textarea>
+            <p class="hint" id="h-msg">Where the damage is and how it happened.</p>
           </div>
 
-          <button class="btn btn--dark" type="submit">Request a quote</button>
-          <p class="hint hint--block">Sending opens your email app with your details filled in, addressed to the shop.</p>
+          <div class="form__foot">
+            <button class="btn" type="submit" id="submit">Send request</button>
+            <p class="hint">Opens your email app with your details filled in.</p>
+          </div>
           <p class="status" id="status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap site-footer__row">
-      <p>&copy; <span id="yr">2026</span> Tony's Collision Repair &middot; Provo, Utah</p>
-      <p>Owner: Tony Ramirez</p>
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <a class="logo" href="#top" aria-label="Tony's Collision Repair, back to top">
+        <span class="logo__bar" aria-hidden="true"></span>
+        <span class="logo__name">Tony's</span>
+        <span class="logo__sub">Collision Repair</span>
+      </a>
+      <p>123 Main Street, Provo, UT 84601<br><a href="tel:+15551234567">(555) 123-4567</a></p>
+      <ul class="footer__links" aria-label="Legal">
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+      <p class="footer__copy">&copy; <span id="yr">2026</span> Tony's Collision Repair</p>
     </div>
   </footer>
+
+  <!-- Mobile action bar, appears after the hero scrolls away -->
+  <div class="actionbar" id="actionbar" aria-label="Quick actions" role="region">
+    <a class="btn" href="#quote">Get a quote</a>
+    <a class="btn btn--line" href="tel:+15551234567">Call (555) 123-4567</a>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
