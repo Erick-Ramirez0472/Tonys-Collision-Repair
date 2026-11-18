@@ -238,6 +238,7 @@ main:focus{outline:none}
 @media (prefers-reduced-motion:no-preference){.upload--claim:not([hidden]){animation:claimIn .4s var(--ease)}}
 @keyframes claimIn{from{opacity:0;transform:translateY(-6px)}}
 /* VIN: "?" button opens a help panel with the location diagram */
+.vin__line{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.25rem}
 .vin__ask{display:flex;align-items:center;gap:.6rem}
 .vin__ask-text{font-size:.75rem;white-space:nowrap}
 @media (max-width:350px){.vin__ask{gap:.5rem}.vin__ask-text{font-size:.6875rem}}
