@@ -310,7 +310,9 @@
           form.reset();
           uploaders.forEach(u => u.clear());
           syncClaim();
-          status.textContent = 'Thanks, your request was sent. We\'ll call you back soon.';
+          status.textContent = res.ref
+            ? `Thanks, your request was sent. Your quote number is ${res.ref}. We'll call you back soon.`
+            : 'Thanks, your request was sent. We\'ll call you back soon.';
           return;
         }
         // Server-side validation caught something the browser missed: show it on the field

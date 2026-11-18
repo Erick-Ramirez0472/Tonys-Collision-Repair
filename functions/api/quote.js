@@ -67,6 +67,17 @@ function cleanFiles(list, claim) {
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } });
 
+// Short quote number like "1118-K7M4": the Utah date plus 4 random characters.
+// A unique subject keeps Gmail from stacking requests into one thread, with no counter to store.
+// The alphabet skips look-alikes (0/O, 1/I/L) so it's easy to read out over the phone.
+const REF_CHARS = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
+function quoteRef() {
+  const date = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Denver', month: '2-digit', day: '2-digit' })
+    .format(new Date()).replace('/', '');
+  const rand = Array.from(crypto.getRandomValues(new Uint8Array(4)), b => REF_CHARS[b % REF_CHARS.length]).join('');
+  return `${date}-${rand}`;
+}
+
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
 export async function onRequestPost({ request, env }) {
@@ -108,8 +119,10 @@ export async function onRequestPost({ request, env }) {
   }
   if (Object.keys(errors).length) return json({ ok: false, error: 'invalid', fields: errors }, 422);
   const files = attached.files;
+  const ref = quoteRef();
 
   const rows = [
+    ['Quote #', ref],
     ['Name', d.name],
     ['Phone', d.phone],
     ['Email', d.email],
@@ -129,7 +142,7 @@ export async function onRequestPost({ request, env }) {
     + (d.msg ? `\n\nWhat happened:\n${d.msg}` : '')
     + (names.length ? `\n\nAttached (${names.length}):\n${names.join('\n')}` : '');
   const html = `
-    <h2 style="font-family:sans-serif;margin:0 0 12px">New quote request</h2>
+    <h2 style="font-family:sans-serif;margin:0 0 12px">Quote request #${esc(ref)}</h2>
     <table style="font-family:sans-serif;font-size:15px;border-collapse:collapse">
       ${rows.map(([k, v]) => `<tr><td style="padding:4px 16px 4px 0;color:#555">${esc(k)}</td><td style="padding:4px 0"><strong>${esc(v)}</strong></td></tr>`).join('')}
     </table>
@@ -140,7 +153,7 @@ export async function onRequestPost({ request, env }) {
   const payload = {
     from: env.QUOTE_FROM || DEFAULT_FROM,
     to: env.QUOTE_TO.split(',').map(s => s.trim()).filter(Boolean),
-    subject: `Quote request: ${d.name}`,
+    subject: `Quote #${ref}: ${d.name}${d.vehicle ? `, ${d.vehicle}` : ''}`,
     text,
     html,
   };
@@ -157,7 +170,7 @@ export async function onRequestPost({ request, env }) {
     console.error('Resend error', res.status, await res.text());
     return json({ ok: false, error: 'send_failed' }, 502);
   }
-  return json({ ok: true });
+  return json({ ok: true, ref });
 }
 
 export const onRequest = () => json({ ok: false, error: 'method_not_allowed' }, 405);
