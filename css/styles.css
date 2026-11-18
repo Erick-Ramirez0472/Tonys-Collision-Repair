@@ -238,12 +238,12 @@ main:focus{outline:none}
 @media (prefers-reduced-motion:no-preference){.upload--claim:not([hidden]){animation:claimIn .4s var(--ease)}}
 @keyframes claimIn{from{opacity:0;transform:translateY(-6px)}}
 /* VIN: "?" button opens a help panel with the location diagram */
-.vin__head{display:flex;align-items:center;gap:.6rem}
+.vin__ask{display:flex;align-items:center;gap:.6rem}
+.vin__ask-text{font-size:.75rem;white-space:nowrap}
+@media (max-width:350px){.vin__ask{gap:.5rem}.vin__ask-text{font-size:.6875rem}}
 .help-btn{display:inline-grid;place-items:center;width:32px;height:32px;padding:0;flex:none;background:transparent;color:var(--text);border:1px solid var(--line);font:700 1.125rem/1 var(--display);cursor:pointer;transition:background-color .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
 .help-btn:hover{border-color:var(--text);background:var(--s1)}
 .help-btn[aria-expanded=true]{background:var(--red);border-color:var(--red);color:var(--on-red)}
-.link-btn{padding:.25rem 0;background:none;border:0;color:var(--red-tx);font:inherit;font-weight:600;text-decoration:underline;text-underline-offset:.2em;cursor:pointer}
-.link-btn:hover{color:var(--text)}
 .vin__help{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:1.25rem;align-items:center;padding:1rem;background:var(--s1);border-left:3px solid var(--red)}
 .vin__help[hidden]{display:none}
 @media (prefers-reduced-motion:no-preference){.vin__help:not([hidden]){animation:claimIn .3s var(--ease)}}
