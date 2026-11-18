@@ -119,12 +119,12 @@
       d.email && `Email: ${d.email}`, d.vehicle && `Vehicle: ${d.vehicle}`,
       `Insurance claim: ${d.claim}`, d.msg && `\n${d.msg}`
     ].filter(Boolean).join('\n');
-    location.href = 'mailto:info@tonyscollisionrepair.com?subject=' +
+    location.href = 'mailto:tonyscollisionrepair.utah@gmail.com?subject=' +
       encodeURIComponent('Quote request: ' + d.name) + '&body=' + encodeURIComponent(body);
     setTimeout(() => {
       submit.removeAttribute('aria-busy');
       submit.textContent = 'Send request';
-      status.textContent = 'Your email app should now be open with your request. Press send there. If nothing opened, call (555) 123-4567.';
+      status.textContent = 'Your email app should now be open with your request. Press send there. If nothing opened, call +1 (385) 268-8187.';
     }, 900);
   });
 })();
