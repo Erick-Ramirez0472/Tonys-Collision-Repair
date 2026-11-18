@@ -211,6 +211,8 @@ main:focus{outline:none}
 .summary:focus{outline:3px solid var(--focus);outline-offset:3px}
 .status{font-weight:600}
 .status:empty{display:none}
+.status--error{color:var(--err)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
 /* Footer */
 .footer{border-top:1px solid var(--rule);padding-block:2.5rem}

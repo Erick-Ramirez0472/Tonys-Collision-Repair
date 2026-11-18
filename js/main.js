@@ -111,20 +111,36 @@
       return;
     }
     summary.hidden = true;
+    if (submit.hasAttribute('aria-busy')) return;
     submit.setAttribute('aria-busy', 'true');
-    submit.textContent = 'Opening email';
-    const d = Object.fromEntries(new FormData(form));
-    const body = [
-      `Name: ${d.name}`, `Phone: ${d.phone}`,
-      d.email && `Email: ${d.email}`, d.vehicle && `Vehicle: ${d.vehicle}`,
-      `Insurance claim: ${d.claim}`, d.msg && `\n${d.msg}`
-    ].filter(Boolean).join('\n');
-    location.href = 'mailto:tonyscollisionrepair.utah@gmail.com?subject=' +
-      encodeURIComponent('Quote request: ' + d.name) + '&body=' + encodeURIComponent(body);
-    setTimeout(() => {
-      submit.removeAttribute('aria-busy');
-      submit.textContent = 'Send request';
-      status.textContent = 'Your email app should now be open with your request. Press send there. If nothing opened, call +1 (385) 268-8187.';
-    }, 900);
+    submit.textContent = 'Sending';
+    status.classList.remove('status--error');
+    const fail = 'We couldn\'t send your request. Please try again, or call +1 (385) 268-8187.';
+    fetch('/api/quote', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    })
+      .then(r => r.json().catch(() => ({})).then(res => ({ ok: r.ok && res.ok, res })))
+      .then(({ ok, res }) => {
+        if (ok) {
+          form.reset();
+          status.textContent = 'Thanks, your request was sent. We\'ll call you back soon.';
+          return;
+        }
+        // Server-side validation caught something the browser missed: show it on the field
+        const fields = (res && res.fields) || {};
+        Object.entries(fields).forEach(([f, m]) => {
+          const out = $('#e-' + f);
+          if (!out) return;
+          out.textContent = m;
+          out.hidden = false;
+          form.elements[f].setAttribute('aria-invalid', 'true');
+        });
+        status.classList.add('status--error');
+        status.textContent = Object.keys(fields).length ? 'Check the highlighted fields and try again.' : fail;
+      })
+      .catch(() => { status.classList.add('status--error'); status.textContent = fail; })
+      .finally(() => { submit.removeAttribute('aria-busy'); submit.textContent = 'Send request'; });
   });
 })();
