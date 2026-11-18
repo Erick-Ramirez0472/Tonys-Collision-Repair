@@ -214,6 +214,46 @@ main:focus{outline:none}
 .status--error{color:var(--err)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
+/* File attachments: a drop zone with a real file input behind a button-styled label */
+.form .label{font-weight:600}
+.drop{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.25rem;padding:1.1rem;border:1px dashed var(--line);transition:border-color .2s var(--ease),background-color .2s var(--ease)}
+.drop.over{border-color:var(--text);border-style:solid;background:var(--s1)}
+.drop__btn{min-height:48px;font-size:1rem;cursor:pointer}
+.drop input:focus-visible+.drop__btn{outline:3px solid var(--focus);outline-offset:3px}
+.drop.invalid{border-color:var(--err);box-shadow:inset 4px 0 0 var(--err)}
+.files{display:grid;gap:.5rem}
+.files:empty{display:none}
+.files li{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:.9rem;padding:.5rem .5rem .5rem .5rem;background:var(--s1);border-left:3px solid var(--red)}
+.files__thumb{width:48px;height:48px;object-fit:cover;background:var(--s2)}
+.files__doc{display:grid;place-items:center;width:48px;height:48px;background:var(--s2);font:700 .8125rem/1 var(--display);letter-spacing:.06em;color:var(--muted)}
+.files__name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.files__size{display:block;font-size:.875rem;font-weight:400;color:var(--muted)}
+.files__rm{min-height:44px;padding:0 .9rem;background:transparent;color:var(--text);border:1px solid var(--line);font:600 .9375rem var(--body);cursor:pointer}
+.files__rm:hover{border-color:var(--text)}
+.files__total:empty{display:none}
+.upload[hidden]{display:none}
+/* Estimate upload slides in under the insurance question once "Yes" is picked */
+.upload--claim{padding:1.1rem 1.1rem 1.25rem;background:var(--s1);border-left:3px solid var(--red)}
+.upload--claim .drop{background:var(--bg)}
+@media (prefers-reduced-motion:no-preference){.upload--claim:not([hidden]){animation:claimIn .4s var(--ease)}}
+@keyframes claimIn{from{opacity:0;transform:translateY(-6px)}}
+/* VIN: "?" button opens a help panel with the location diagram */
+.vin__head{display:flex;align-items:center;gap:.6rem}
+.help-btn{display:inline-grid;place-items:center;width:32px;height:32px;padding:0;flex:none;background:transparent;color:var(--text);border:1px solid var(--line);font:700 1.125rem/1 var(--display);cursor:pointer;transition:background-color .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease)}
+.help-btn:hover{border-color:var(--text);background:var(--s1)}
+.help-btn[aria-expanded=true]{background:var(--red);border-color:var(--red);color:var(--on-red)}
+.vin__help{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:1.25rem;align-items:center;padding:1rem;background:var(--s1);border-left:3px solid var(--red)}
+.vin__help[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.vin__help:not([hidden]){animation:claimIn .3s var(--ease)}}
+.vin__fig{margin:0;padding:.5rem;background:#fff}
+.vin__fig img{width:100%;height:auto}
+.vin__tips{display:grid;gap:.6rem}
+.vin__title{font-size:1.375rem}
+.vin__tips ul{display:grid;gap:.4rem;padding-left:1.1rem;list-style:square}
+.vin__tips li::marker{color:var(--red-tx)}
+@media (max-width:560px){.drop__or{display:none}.drop__btn{width:100%}.vin__help{grid-template-columns:minmax(0,1fr)}.vin__fig{max-width:22rem}}
+@media (forced-colors:active){.help-btn{border:2px solid ButtonText}.help-btn[aria-expanded=true]{background:Highlight;color:HighlightText}}
+
 /* Footer */
 .footer{border-top:1px solid var(--rule);padding-block:2.5rem}
 .footer__row{display:grid;grid-template-columns:auto 1fr auto auto;gap:1.25rem 3rem;align-items:center;color:var(--muted);font-size:.9375rem}

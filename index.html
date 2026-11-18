@@ -211,7 +211,7 @@
         <div class="quote__intro">
           <p class="eyebrow">Contact</p>
           <h2 id="quote-title">Get a quote.</h2>
-          <p class="lead">Tell us what happened and we'll get back to you. Only your name and phone number are required.</p>
+          <p class="lead">Tell us what happened and we'll get back to you. To build an accurate estimate we need your name, phone number, a photo of your VIN and photos of the damage.</p>
           <ul class="contact">
             <li>
               <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.120,8.120,0,0,0-.75.56L134.87,160c-15.42-7.490-31.340-23.290-38.830-38.510l20.780-24.710c.2-.25.390-.5.570-.77a16,16,0,0,0,1.320-15.060l0-.12L97.540,33.640a16,16,0,0,0-16.620-9.520A56.260,56.260,0,0,0,32,80c0,79.400,64.600,144,144,144a56.260,56.260,0,0,0,55.880-48.920A16,16,0,0,0,222.370,158.460ZM176,208A128.140,128.140,0,0,1,48,80,40.200,40.200,0,0,1,82.870,40a.61.61,0,0,0,0,.12l21,47L83.200,111.860a6.130,6.130,0,0,0-.57.77,16,16,0,0,0-1,15.700c9.060,18.530,27.730,37.060,46.460,46.110a16,16,0,0,0,15.750-1.140,8.440,8.440,0,0,0,.74-.56L168.890,152l47,21.050h0s.08,0,.11,0A40.210,40.210,0,0,1,176,208Z"/></svg>
@@ -261,6 +261,42 @@
             </div>
           </div>
 
+          <!-- VIN photo. The location diagram stays tucked behind the ? button until someone needs it. -->
+          <div class="field upload vin" data-upload="vin" data-max="1" data-docs="false">
+            <div class="vin__head">
+              <span class="label" id="l-vin">Photo of your VIN <span class="req">(required)</span></span>
+              <button class="help-btn" type="button" id="vin-help-btn" aria-expanded="false" aria-controls="vin-help" aria-label="Where do I find my VIN?">
+                <span aria-hidden="true">?</span>
+              </button>
+            </div>
+            <p class="hint" id="h-vin">A clear photo of the 17-character code on your windshield or door frame.</p>
+            <div class="vin__help" id="vin-help" hidden>
+              <figure class="vin__fig">
+                <img src="assets/img/vin-location.png" width="700" height="597" loading="lazy" decoding="async"
+                  alt="Diagram of an SUV with the two usual VIN locations circled: the base of the windshield on the driver's side, and the driver's door frame. A close-up shows an example 17-character VIN.">
+              </figure>
+              <div class="vin__tips">
+                <h3 class="vin__title">Where to find your VIN</h3>
+                <ul>
+                  <li><strong>Windshield:</strong> look through the glass at the bottom corner on the driver's side.</li>
+                  <li><strong>Door frame:</strong> open the driver's door and check the sticker on the frame.</li>
+                </ul>
+                <p class="hint">Either one works. It's also printed on your registration and insurance card.</p>
+              </div>
+            </div>
+            <div class="drop">
+              <input class="vh" id="f-vin" type="file" required aria-required="true" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-labelledby="l-vin" aria-describedby="h-vin">
+              <label class="btn btn--line drop__btn" for="f-vin">
+                <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0ZM93.660,77.660,120,51.310V152a8,8,0,0,0,16,0V51.310l26.340,26.350a8,8,0,0,0,11.320-11.320l-40-40a8,8,0,0,0-11.320,0l-40,40A8,8,0,0,0,93.660,77.660Z"/></svg>
+                Add VIN photo
+              </label>
+              <span class="drop__or hint">or drag it here</span>
+            </div>
+            <p class="err" hidden></p>
+            <ul class="files" aria-label="VIN photo"></ul>
+            <p class="hint files__total" role="status" aria-live="polite"></p>
+          </div>
+
           <fieldset class="field choice">
             <legend>Is this an insurance claim?</legend>
             <div class="choice__opts">
@@ -270,10 +306,43 @@
             </div>
           </fieldset>
 
+          <!-- Shown only when "Yes" is picked above -->
+          <div class="field upload upload--claim" data-upload="estimate" data-max="5" data-docs="true" id="estimate-field" hidden>
+            <span class="label" id="l-estimate">Upload your insurance estimate <span class="req">(required)</span></span>
+            <p class="hint" id="h-estimate">Add the estimate from your insurance company so we can review it before we call. A PDF or a photo of each page works.</p>
+            <div class="drop">
+              <input class="vh" id="f-estimate" type="file" required aria-required="true" multiple accept="application/pdf,.pdf,image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-labelledby="l-estimate" aria-describedby="h-estimate">
+              <label class="btn btn--line drop__btn" for="f-estimate">
+                <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0ZM93.660,77.660,120,51.310V152a8,8,0,0,0,16,0V51.310l26.340,26.350a8,8,0,0,0,11.320-11.320l-40-40a8,8,0,0,0-11.320,0l-40,40A8,8,0,0,0,93.660,77.660Z"/></svg>
+                Add estimate
+              </label>
+              <span class="drop__or hint">or drag it here</span>
+            </div>
+            <p class="err" hidden></p>
+            <ul class="files" aria-label="Insurance estimate files"></ul>
+            <p class="hint files__total" role="status" aria-live="polite"></p>
+          </div>
+
           <div class="field">
             <label for="f-msg">What happened? <span class="opt">(optional)</span></label>
             <textarea id="f-msg" name="msg" rows="4" aria-describedby="h-msg"></textarea>
             <p class="hint" id="h-msg">Where the damage is and how it happened.</p>
+          </div>
+
+          <div class="field upload" data-upload="damage" data-max="10" data-docs="false">
+            <span class="label" id="l-damage">Photos of the damage <span class="req">(required)</span></span>
+            <p class="hint" id="h-damage">Add at least one photo. A few from different angles help us quote faster. Up to 10 photos.</p>
+            <div class="drop">
+              <input class="vh" id="f-damage" type="file" required aria-required="true" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-labelledby="l-damage" aria-describedby="h-damage">
+              <label class="btn btn--line drop__btn" for="f-damage">
+                <svg class="i" viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0ZM93.660,77.660,120,51.310V152a8,8,0,0,0,16,0V51.310l26.340,26.350a8,8,0,0,0,11.320-11.320l-40-40a8,8,0,0,0-11.320,0l-40,40A8,8,0,0,0,93.660,77.660Z"/></svg>
+                Add photos
+              </label>
+              <span class="drop__or hint">or drag them here</span>
+            </div>
+            <p class="err" hidden></p>
+            <ul class="files" aria-label="Damage photos"></ul>
+            <p class="hint files__total" role="status" aria-live="polite"></p>
           </div>
 
           <div class="hp" aria-hidden="true">
