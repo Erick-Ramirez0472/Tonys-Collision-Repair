@@ -67,7 +67,7 @@
   const list = $('#err-list');
   const status = $('#status');
   const submit = $('#submit');
-  const labels = { name: 'Name', phone: 'Phone', email: 'Email', vin: 'VIN photo', estimate: 'Insurance estimate', damage: 'Photos of the damage' };
+  const labels = { name: 'Name', phone: 'Phone', email: 'Email', vin: 'VIN photo', estimate: 'Insurance estimate', damage: 'Damage photos' };
   // Required uploads: what to say when one is missing
   const needFiles = {
     vin: 'Add a photo of your VIN.',
@@ -233,14 +233,18 @@
   const active = () => uploaders.filter(u => !u.root.hidden);
   const totalBytes = () => uploaders.reduce((s, u) => s + u.files.reduce((t, f) => t + f.file.size, 0), 0);
 
-  // VIN help: the "?" button shows the location diagram only when the customer asks for it.
-  // Disclosure pattern: aria-expanded on the button, Escape closes and returns focus.
-  const vinBtn = $('#vin-help-btn');
+  // VIN help: the "?" button and the "Tap here" link show the location diagram only when asked for.
+  // Disclosure pattern: aria-expanded on both toggles, Escape closes and returns focus to the one used.
+  const vinToggles = [$('#vin-help-btn'), $('#vin-help-link')];
   const vinHelp = $('#vin-help');
-  const setVinHelp = open => { vinBtn.setAttribute('aria-expanded', String(open)); vinHelp.hidden = !open; };
-  vinBtn.addEventListener('click', () => setVinHelp(vinHelp.hidden));
-  [vinBtn, vinHelp].forEach(el => el.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && !vinHelp.hidden) { e.stopPropagation(); setVinHelp(false); vinBtn.focus(); }
+  let vinOpener = vinToggles[0];
+  const setVinHelp = open => {
+    vinToggles.forEach(b => b.setAttribute('aria-expanded', String(open)));
+    vinHelp.hidden = !open;
+  };
+  vinToggles.forEach(b => b.addEventListener('click', () => { vinOpener = b; setVinHelp(vinHelp.hidden); }));
+  [...vinToggles, vinHelp].forEach(el => el.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !vinHelp.hidden) { e.stopPropagation(); setVinHelp(false); vinOpener.focus(); }
   }));
 
   // Insurance estimate: reveal its upload spot when the customer says this is a claim

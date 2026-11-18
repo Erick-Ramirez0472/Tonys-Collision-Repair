@@ -270,6 +270,7 @@
               </button>
             </div>
             <p class="hint" id="h-vin">A clear photo of the 17-character code on your windshield or door frame.</p>
+            <p class="hint">Don't know where the VIN is? <button class="link-btn" type="button" id="vin-help-link" aria-expanded="false" aria-controls="vin-help">Tap here</button></p>
             <div class="vin__help" id="vin-help" hidden>
               <figure class="vin__fig">
                 <img src="assets/img/vin-location.png" width="700" height="597" loading="lazy" decoding="async"
@@ -330,8 +331,8 @@
           </div>
 
           <div class="field upload" data-upload="damage" data-max="10" data-docs="false">
-            <span class="label" id="l-damage">Photos of the damage <span class="req">(required)</span></span>
-            <p class="hint" id="h-damage">Add at least one photo. A few from different angles help us quote faster. Up to 10 photos.</p>
+            <span class="label" id="l-damage">Upload damage photos <span class="req">(required)</span></span>
+            <p class="hint" id="h-damage">Take photos far enough away to show the surrounding panels. Close-up photos can be helpful, but don't let us see the full picture of the damage on their own.</p>
             <div class="drop">
               <input class="vh" id="f-damage" type="file" required aria-required="true" multiple accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-labelledby="l-damage" aria-describedby="h-damage">
               <label class="btn btn--line drop__btn" for="f-damage">
